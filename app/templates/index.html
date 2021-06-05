@@ -1,26 +1,12 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title%}
-            <title>{{title}}</title>
-        {% else%}
-            <title>Home -News site page</title>
-        {% endif%}
-    </head>
-    <body>
-        <h2>This is a news site. Woow!</h2> 
-        <h3>News Sources</h3>
-        <ul>
-            {{macro.displaySourceList(sourceList)}}
-            <!-- {% for source in sourceList%}
-                <h2>{{source.name}}</h2>
-                <li>{{source.description}}</li>
-                <li>{{source.url}}</li>
-                <li>{{source.category}}</li>
-            {%endfor%}             -->
-               
-        </ul>
-    </body>
-</html>
+
+{% block content%} 
+    
+<h2>This is a news site.News Sources, Woow!</h2> 
+
+<ul>
+{{macro.displaySourceList(sourceList)}}              
+</ul>
+
+{% endblock %}
