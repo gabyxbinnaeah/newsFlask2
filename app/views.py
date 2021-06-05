@@ -6,6 +6,8 @@ def index():
     '''
     returns that template pages
     '''
-
-    return render_template('index.html')
     
+    title="Home -News site"
+    return render_template('index.html',title=title)
+
+

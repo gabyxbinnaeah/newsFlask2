@@ -5,15 +5,15 @@ class Config:
     pass
 class ProdConfig(Config):
     '''
-    Production configuration settings class
+
     Args:
-         general configuration class from which the child class inherits configurations.
+         general configuration class from which the child class inherits configurations settings.
     '''
     pass
 class DevConfig(Config):
     '''
-    Production configuration settings class
+    development configuration settings class
     Args:
-         general configuration class from which the child class inherits configurations.
+         general configuration class from which the child class inherits configurations settings.
     '''
     DEBUG=True
