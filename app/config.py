@@ -2,7 +2,8 @@ class Config:
     '''
     General configurations setting class 
     '''
-    pass
+    NEWS_SOURCE_API='https://newsapi.org/v2/sources?apiKey={}'
+    NEWS_SOURCES_URL ='https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
 class ProdConfig(Config):
     '''
 
