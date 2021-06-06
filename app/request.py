@@ -63,7 +63,22 @@ def process_results(source_list):
     return source_results
 
 
+def get_source():
+    get_source_details_url=source_url.format(api_key)
+    with urllib.urlopen(get_source_details_url) as url:
+        source_details_data=url.read()
+        source_details_response=json.loads(source_details_data)
 
+        source_object=None
+        if source_details_response:
+            name=source_details_response.get('name')
+            description=source_details_response.get('description')
+            url=source_details_response.get('url')
+            category=source_details_response.get('category')
+
+            source_object=Source(id,name,description,url,category)
+
+    return source_object
 
 
 
