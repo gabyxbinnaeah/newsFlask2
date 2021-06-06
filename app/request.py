@@ -81,6 +81,18 @@ def get_source(api_key):
     return source_object
 
 
+def sear_source(source_name):
+    search_source_url='https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(source_name,api_key)
+    with urllib.urlopen(search_source_url)as url:
+        search_source_data=url.read()
+        search_source_response=json.loads(search_source_data)
 
+        search_source_results=None
+
+        if search_source_response['sources']:
+            search_source_list=search_source_response['sources']
+            search_source_results=process_results(search_source_list)
+    
+    return search_source_results
 
 
