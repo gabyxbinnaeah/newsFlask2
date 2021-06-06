@@ -21,7 +21,7 @@ def source(id):
     '''
     View source page function that returns the source details page and its data
     '''
-    source=get_source(id)
-    title=f'{source.title}'
+    source=get_source(name)
+    title=f'{source.name}'
     return render_template('source.html',title=title,source=source)
 

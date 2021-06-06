@@ -1,5 +1,22 @@
 {%macro displaySourceList(sourceList) %}
    {%for source in sourceList %}
-     <li>{{ source.name}}</li>
+   <!-- <img src="{{ source.url }}" alt="{{ source.name }}" class="img-responsive"> -->
+   <!-- class="text-center" -->
+   <div class="row">
+     <div class="col-md-4">
+      <div class="card" style="text-align:center;margin-top: 20px;margin: bottom 20px;background-color:aqua">
+        <div class="card-body"><h4> {{ source.name}}</h4> </div>
+         <div class="card-footer" style="background-color: white;">
+           <h4 >
+             <a href="/source/{{source.name}}">{{ source.name | truncate(10)}}</a>
+          </h4>
+         </div>
+      
+      </div>
+     </div>
+     <div class="col-md-8"></div>
+   </div>
+ 
+   
     {%endfor%}
 {% endmacro %}
