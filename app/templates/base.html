@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title%}
-            <title>{{title}}</title>
-        {% else%}
-            <title>Home -News site page</title>
-        {% endif%}
-    </head>
-    <body>
-        <!--content block-->
-        {%block content%}
-
-        {%endblock%}
-        
-    </body>
-</html>
+{% extends 'bootstrap/base.html'%}
+{% block navbar%}
+   {%include 'navbar.html' %}
+{%endblock%}
