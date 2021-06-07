@@ -7,7 +7,7 @@ from ..request import get_sources,get_articles
 @main.route('/')
 def index():
     '''
-    view root page function that returns the template pages
+    view root page function that returns the template 
     '''
    
     sourceSamples =get_sources()
