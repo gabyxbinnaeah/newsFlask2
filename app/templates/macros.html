@@ -1,22 +1,30 @@
 {%macro displaySourceList(sourceList) %}
    {%for source in sourceList %}
-   <!-- <img src="{{ source.url }}" alt="{{ source.name }}" class="img-responsive"> -->
-   <!-- class="text-center" -->
-   <div class="row">
-     <div class="col-md-4">
-      <div class="card" style="text-align:center;margin-top: 20px;margin: bottom 20px;background-color:aqua">
-        <div class="card-body"><h4> {{ source.name}}</h4> </div>
-         <div class="card-footer" style="background-color: white;">
-           <h4 >
-             <a href="/source/{{source.name}}">{{ source.name | truncate(10)}}</a>
-          </h4>
-         </div>
-      
-      </div>
-     </div>
-     <div class="col-md-8"></div>
+
+   <!--ben-->
+
+   <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 block" >
+    <h4 style="color: maroon;">{{ source.name}}</h4>
+    <p>{{source.description}}</p>
+    <a href="/article/{{source.id}}" class="btn btn-info btn-sm">More on {{source.name}}</a>
    </div>
- 
    
     {%endfor%}
 {% endmacro %}
+
+{% macro displayArticlesList(articleList) %}
+    {%for article in articleList%}
+        {%if article.urlToImage %} 
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" style="padding-bottom: 10px;">
+               <a href="{{article.url}}" ><img class="img-responsive" src="{{article.urlToImage}}" alt="image"></a>
+                <h4 style="color: teal;">{{article.title}}</h4>
+                <p>{{article.description}}</p>
+                <p>Published: {{article.publishedAt}}</p>
+                <a href="{{article.url}}" class="btn btn-success btn-sm">Visit Website</a>
+            </div>
+        {%endif%}
+    {% endfor %}
+{% endmacro %}
+
+
+
